@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>测试发送ajax请求</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<button id='send'>点击发送ajax</button>
+</body>
+<script type="text/javascript" src="https://img.5w.com.cn/5w/js/jquery.min.js"></script>
+<script>
+$('#send').on('click',function(){
+	$.get("{:url('index/ajax/create')}",{'name':'mei','age':22},function(data){
+		if(data.status==1){
+			alert('my name is '+data.data.name);
+		}
+	});
+})
+	
+</script>
+</html>
